@@ -1,0 +1,25 @@
+.question {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100px;
+    background-color: aqua;
+    cursor: pointer;
+}
+
+.answer {
+    padding: 25px;
+    background-color: red;
+    transition: height 0.5s;
+}
+
+.hidden {
+    display: none;
+    height: 0;
+    transition: height 0.5s;
+}
+
+.hidden p {
+    display: none;
+}

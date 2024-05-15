@@ -1,0 +1,52 @@
+.mainHeader {
+    position: fixed;
+    top: 0;
+    justify-content: center;
+    width: 100vw;
+    display: flex;
+    height: 70px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    background-color: rgb(0, 0, 0);
+    align-items: center;
+    z-index: 5;
+}
+
+.mainHeader h2 {
+    font-size: 50px;
+    font-style: italic;
+    color: white;
+}
+
+.mainHeader ul {
+    display: flex;
+    width: auto;
+    height: 100%;
+    list-style-type: none;
+}
+
+.mainHeader li {
+    display: flex;
+    align-items: center;
+    margin-right: 15px;
+}
+
+.mainHeader button {
+    background-color: none;
+    border-style: none;
+    background-color:rgb(119, 185, 113);
+    color: white;
+    height: 100%;
+}
+
+.logoImage {
+    height: 60%;
+    margin-right: 10px;
+}
+
+.option {
+    color: white;
+}
+
+.option:hover {
+    color: white;
+}

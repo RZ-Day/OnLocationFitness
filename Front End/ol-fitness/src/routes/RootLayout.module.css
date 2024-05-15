@@ -1,0 +1,9 @@
+.generalPage {
+    height: 100vh;
+    overflow-x: hidden;
+    scrollbar-width: none;
+}
+
+.pageSpacer {
+    height: 70px;
+}

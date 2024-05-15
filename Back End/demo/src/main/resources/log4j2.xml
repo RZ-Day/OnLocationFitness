@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Configuraion>
+    <Appenders>
+<!--        %logger to show loggers to suppress-->
+<!--        add [%l] to show line of log statement-->
+        <Console name="CONSOLE">
+            <PatternLayout pattern="[%t] %d{yyyy-dd-MM HH:mm:ss,SSS} %-10p : %m %X{LoggerTrackingData}%n"/>
+        </Console>
+    </Appenders>
+    <Loggers>
+        <Logger name="com.zaxxer" level="warn" />
+        <Logger name="org.springframework" level="warn" />
+        <Logger name="org.postgresql" level="warn" />
+        <Logger name="org.apache" level="warn" />
+
+
+        <Root level="debug" includeLocation="true">
+            <AppenderRef ref="CONSOLE"></AppenderRef>
+        </Root>
+    </Loggers>
+</Configuraion>

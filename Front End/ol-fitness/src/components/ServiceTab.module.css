@@ -1,0 +1,39 @@
+.serviceCard {
+    background-color: rgb(255, 255, 255);
+    width: 500px;
+    margin-top: 25px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.serviceCard:hover {
+    transform: translateX(10px);
+}
+
+.cardHeader {
+    display: flex;
+    align-items: center;
+    height: 35px;
+    background-color: rgb(255, 255, 255);
+    margin-bottom: none;
+}
+
+.cardHeader p {
+    font-size: large;
+    font-family:Arial, Helvetica, sans-serif
+}
+
+.cardFooter {
+    display: flex;
+    padding: none;
+    background-color: rgb(255, 255, 255);
+    list-style-type: none;
+    border-color: rgb(107, 106, 98);
+    border-bottom: solid;
+}
+
+.cardFooter li {
+    margin: none;
+    font-size: small;
+    color: grey;
+}

@@ -1,0 +1,37 @@
+.contactForm {
+    display: flex;
+    flex-direction: column;
+    padding-right: 25px;
+    padding-left: 25px;
+    height: 80%;
+}
+
+
+.contactForm p {
+    display: flex;
+    flex-direction: column;
+}
+
+.messageBox {
+    height: 100%;
+    border-style: none;
+    outline: none;
+    padding: 10px;
+    border-radius: 5px;
+    background-color: rgb(223, 223, 223);
+    resize: none;
+}
+
+
+.contactForm input {
+    height: 30px;
+    border-radius: 5px;
+    padding: 10px;
+    border-style: none;
+    outline: none;
+    background-color: rgb(223, 223, 223);
+}
+
+.messageBox {
+    height: 100%;
+}

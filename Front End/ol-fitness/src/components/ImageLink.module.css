@@ -1,0 +1,42 @@
+.mainCard {
+    display: flex;
+    flex-direction:column;
+    border-radius: 5px;
+    overflow: hidden;
+    height: 100%;
+    width: 100%;
+    transition: 0.3s ease;
+    font-size: 2em;
+    cursor: pointer;
+}
+
+.mainCard:hover {
+    transform: translateY(-10px);
+    box-shadow: -5px 10px 10px grey;
+}
+
+.topBanner {
+    display: flex;
+    background-color: rgb(0, 0, 0);
+    height: 10%;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-family: Optima, sans-serif;
+    font-weight: 30;
+    text-transform: capitalize;
+}
+
+.bottomBanner {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 20%;
+    color: white;
+    background-color: rgb(0, 0, 0);
+}
+
+.image {
+    height: 100%;
+    object-fit: cover;
+}

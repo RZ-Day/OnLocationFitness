@@ -1,0 +1,58 @@
+.section {
+    flex-direction:column;
+    display: flex;
+    align-items: center;
+}
+
+.divider {
+    width: 70vw;
+    border-bottom: solid;
+    opacity: 50%;
+    margin-bottom: 25px;
+    margin-top: 25px;
+}
+
+.introduction {
+    display: flex;
+    align-items: center;
+    width: 70vw;
+}
+
+@media screen and (max-width: 700px) {
+    .introduction {
+        flex-direction: column;
+    }
+}
+
+.introduction img {
+    height: 200px;
+    width: 200px;
+
+    border-radius: 100px;
+    object-fit: cover;
+}
+
+.introduction p {
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    margin-left: 25px;
+    
+}
+
+.bio {
+    display: flex;
+    flex-direction: column;
+    width: 70vw;
+}
+
+.bio h2 {
+    font-family: sans-serif;
+    font-weight: 50;
+    color: rgb(74, 121, 148);
+}
+
+.bio p {
+    margin-bottom: 25px;
+}
+

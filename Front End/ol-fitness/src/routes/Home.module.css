@@ -1,0 +1,22 @@
+.homePage {
+    display:flex;
+    flex-direction: column;
+    width: 100vw;
+    height: auto;
+    justify-content: center;
+    align-items: center;
+    overflow-y: auto;
+}
+
+.slogan {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    border-bottom: solid;
+    margin-top: 10px;
+    margin-bottom: 0;
+    border-color: rgb(204, 204, 204);
+}
+
+.test {
+    height: 1000px;
+}
+

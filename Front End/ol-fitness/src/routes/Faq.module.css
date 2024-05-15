@@ -1,0 +1,12 @@
+.faq {
+    height: 50vh;
+    width: 40vw;
+    min-width: 500px;
+}
+
+.questionList {
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    list-style-type: none;
+}

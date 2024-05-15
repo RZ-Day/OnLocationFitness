@@ -1,0 +1,32 @@
+.backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.6);
+    z-index: 1;
+    
+  }
+  
+  .modal {
+    border: none;
+    position: fixed;
+    top: 50%;
+    transform: translateY(-50%); 
+    border-radius: 6px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    padding: 0;
+    overflow: hidden;
+    z-index: 2;
+    transition: opacity 0.3s, transform 0.3s ease;
+
+    width: 40vw;
+    min-width: 500px;
+    height: 60vh;
+  }
+
+  .modalHidden {
+    transform: translateY(-45%);
+    opacity: 0;
+  }
