@@ -1,5 +1,6 @@
 import ServiceList from "../components/ServiceList";
 //import { useState } from 'react';
+import { Outlet } from 'react-router-dom';
 import classes from "./Services.module.css";
 
 function Services() {
@@ -16,6 +17,7 @@ function Services() {
                 <div className={classes.divider} />
             </section>
             <ServiceList />
+            <Outlet />
         </div>
     );
 }

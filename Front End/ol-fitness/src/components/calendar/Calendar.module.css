@@ -1,0 +1,46 @@
+.calendar {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(233, 233, 233);
+}
+
+.month {
+    height: 50px;
+    background-color: black;
+    color: white;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: x-large;
+    font-style: bold;
+}
+
+.weekDays {
+    display: grid;
+    height: 30px;
+    width: auto;
+    grid-template-columns: repeat(7, 1fr);
+    column-gap: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.weekDays div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 30px;
+}
+
+.calendarGrid {
+    top: 0;
+    left: 0;
+    padding: 10px;
+    height: auto;
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    
+    column-gap: 10px;
+    row-gap: 10px;
+    background-color:rgb(196, 196, 196);
+}

@@ -37,3 +37,11 @@
     font-size: small;
     color: grey;
 }
+
+.link {
+    color: black;
+}
+
+.link:hover {
+    color:rgb(39, 13, 73);
+}

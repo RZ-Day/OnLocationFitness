@@ -1,0 +1,29 @@
+.squareButton {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+
+    background-color: rgb(36, 74, 201);
+    border-radius: 10px;
+    color: white;
+    transition: 0.2s;
+    outline-width: 1px;
+    outline-color: white;
+}
+
+.squareButton:hover {
+    background-color: rgb(105, 130, 241);
+    border-style: none;
+    
+}
+
+.outOfDate {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    background-color: grey;
+    color: white;
+}
+
+.outOfDat:active {
+    border: none;
+    outline: none;
+}

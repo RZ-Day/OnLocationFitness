@@ -1,7 +1,7 @@
 BEGIN TRANSACTION;
 
 DROP TABLE IF EXISTS
-users, blogPost, inquiry
+users, blogPost, inquiry, appointment
 CASCADE;
 
 CREATE TABLE users (
@@ -22,6 +22,12 @@ CREATE TABLE inquiry (
 	user_id INT,
 	user_message varchar(250),
 	FOREIGN KEY (user_id) REFERENCES users(user_id)
+);
+
+CREATE TABLE appointment (
+	appointment_id SERIAL PRIMARY KEY,
+	user_email varchar(100) NOT NULL,
+	scheduled_date TIMESTAMP NOT NULL
 );
 
 COMMIT TRANSACTION;

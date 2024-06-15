@@ -1,0 +1,73 @@
+
+
+.timeSheet {
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    height: 300px;
+    width: 150px;
+    z-index: 10;
+    overflow: hidden;
+    transition: height 0.3s ease-in-out;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.hidden {
+    height: 0px;
+    width: 0px;
+    overflow: hidden;
+}
+
+.backdrop {
+    position: fixed;
+    height: 100vh;
+    width: 100vw;
+    z-index: 9;
+}
+
+.dropdownHeader {
+    display: flex;
+    align-items: center;
+    position: absolute;
+    justify-content: center;
+    height: 40px;
+    width: 100%;
+    background-color: black;
+    font-family: Georgia, Times, 'Times New Roman', serif;
+    color: white;
+}
+
+.timeSlots {
+    margin-top: 40px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    overflow: scroll;
+    overflow-x: hidden;
+}
+
+.options {
+    display: flex;
+    justify-content: center;
+}
+
+.submitActive {
+    width: 100%;
+    background-color: rgb(20, 62, 247);
+    color: rgb(255, 255, 255);
+    border-radius: 0;
+    transition: 0.3s;
+}
+
+.submitActive:hover {
+    background-color: rgb(34, 133, 247);
+    transition: 0.3s;
+}
+
+.submitInactive {
+    width: 100%;
+    background-color: rgb(112, 112, 112);
+    color: rgb(255, 255, 255);
+    border-radius: 5px;
+}

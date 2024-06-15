@@ -1,9 +1,12 @@
 import classes from './ServiceTab.module.css';
 import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
 
-function ServiceTab({ header, description, price, time }) {
+function ServiceTab({ header, description, price, time, serviceId }) {
+    const path = "./book/" + serviceId;
+
     return (
-        <>
+        <Link to={path} className={classes.link}>
             <div className={classes.serviceCard}>
                 
                 <div className={classes.cardHeader}>
@@ -26,7 +29,7 @@ function ServiceTab({ header, description, price, time }) {
                 </p>
                 
             </div>
-        </>
+        </Link>
     );
 }
 
@@ -34,7 +37,8 @@ ServiceTab.propTypes = {
     header: PropTypes.string,
     description: PropTypes.string,
     price: PropTypes.string,
-    time: PropTypes.string
+    time: PropTypes.string,
+    serviceId: PropTypes.number
 }
 
 export default ServiceTab;

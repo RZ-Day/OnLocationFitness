@@ -5,9 +5,10 @@ import './index.css'
 
 import RootLayout from './routes/RootLayout';
 import Home from './routes/Home';
-import ContactMe from './routes/ContactMe';
+import ContactMe, {action as newInquiryAction} from './routes/ContactMe';
 import Services from './routes/Services';
 import Faq from './routes/Faq';
+import Calendar from './components/calendar/Calendar';
 
 import { RouterProvider, createBrowserRouter } from 'react-router-dom';
 
@@ -19,7 +20,8 @@ const router = createBrowserRouter([
         element: <Home />,
         children: [
           { path: '/contact-me',
-            element: <ContactMe />
+            element: <ContactMe />,
+            action: newInquiryAction
           },
           {
             path: '/faq',
@@ -28,7 +30,12 @@ const router = createBrowserRouter([
         ]
       },
       { path: '/services',
-        element: <Services />
+        element: <Services />,
+        children: [
+          { path: '/services/book/:serviceId',
+            element: <Calendar />
+          }
+        ]
       },
     ]
 }

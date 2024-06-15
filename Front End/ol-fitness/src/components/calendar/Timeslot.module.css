@@ -1,0 +1,21 @@
+.slot {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 45px;
+    width: 100%;
+}
+
+.slot:hover {
+    background-color: rgb(243, 243, 243);
+}
+
+.pressed {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 45px;
+    width: 100%;
+    background-color: rgb(114, 124, 136);
+    color: white;
+}
