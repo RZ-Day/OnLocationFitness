@@ -2,18 +2,22 @@
     width: 100%;
     aspect-ratio: 1 / 1;
 
-    background-color: rgb(36, 74, 201);
+    background-color: rgb(231, 170, 37);
     border-radius: 10px;
-    color: white;
+    color: rgb(255, 255, 255);
     transition: 0.2s;
     outline-width: 1px;
     outline-color: white;
 }
 
 .squareButton:hover {
-    background-color: rgb(105, 130, 241);
+    background-color: rgb(218, 182, 85);
     border-style: none;
     
+}
+
+.squareButton:focus {
+    outline: none;
 }
 
 .outOfDate {
@@ -23,7 +27,12 @@
     color: white;
 }
 
-.outOfDat:active {
-    border: none;
+.outOfDate:hover {
+    border-style: none;
+    outline: none;
+}
+
+.outOfDat:focus {
+    border-style: none;
     outline: none;
 }

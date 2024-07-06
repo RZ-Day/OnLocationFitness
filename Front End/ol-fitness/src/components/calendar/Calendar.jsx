@@ -1,5 +1,6 @@
 import classes from './Calendar.module.css';
 import { useState } from 'react';
+import {useNavigate, useParams} from 'react-router-dom';
 import Modal from '../Modal';
 import MonthDial from './MonthDial';
 import DateSquare from './DateSquare';
@@ -13,6 +14,8 @@ function Calendar() {
     const [selectedMonth, setSelectedMonth] = useState(dateObject.getMonth());
     const [appointment, setAppointment] = useState(null);
     const [timeSet, setTimeSet] = useState(false);
+    const { serviceId } = useParams();
+    const nav = useNavigate();
 
     //There MUST be a better way than this
     const months = [
@@ -105,6 +108,10 @@ function Calendar() {
                 const key = timeCalculator.getHours() + "" + timeCalculator.getMinutes();
                 timeslots.push(<Timeslot hour={timeCalculator.getHours()} minute={timeCalculator.getMinutes()} setTime={setTime} key={key} />);
                 timeCalculator.setMinutes(timeCalculator.getMinutes() + increment);
+
+                if(timeCalculator.getHours() == currAvailability.end) {
+                    timeslots.push(<Timeslot hour={timeCalculator.getHours()} minute={timeCalculator.getMinutes()} setTime={setTime} key={key} />);
+                }
             }
         }
         
@@ -144,6 +151,33 @@ function Calendar() {
         return calendarArray;
     }
 
+    async function submitAppointment() {
+        if (timeSet) {
+            try {
+                const response = await fetch('http://localhost:8080/appointment/create', {
+                    method:'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({
+                        apptType: '' + serviceId,
+                        apptDate: appointment.toISOString()
+                    })
+                });
+    
+                if (response.ok) {
+                    console.log('Successfully booked appointment!');
+                } else {
+                    console.error("Error posting appointment: ", response.statusText);
+                }
+            } catch (error) {
+                console.error('Error submitting appointment data: ', error);
+            }
+    
+            nav(-1);
+        }
+    }
+
     return (
         <>
         <Modal onClick={generateTimeslots()}>
@@ -165,7 +199,7 @@ function Calendar() {
                 </div>
             </div>
         </Modal>
-        <TimeSheet dateSelected={appointment != null} resetAppointment={resetAppointment} apptTimes={generateTimeslots(15)} timeSelected={timeSet}/>
+        <TimeSheet dateSelected={appointment != null} resetAppointment={resetAppointment} apptTimes={generateTimeslots(30)} timeSelected={timeSet} submit={submitAppointment}/>
         </>
     );
 }

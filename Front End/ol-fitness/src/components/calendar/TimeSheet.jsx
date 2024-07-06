@@ -4,7 +4,7 @@ import {useState, useEffect} from 'react';
 import {Form, redirect} from 'react-router-dom';
 import Timeslot from './Timeslot';
 
-function TimeSheet({ dateSelected, resetAppointment, apptTimes, timeSelected }) {
+function TimeSheet({ dateSelected, resetAppointment, apptTimes, timeSelected, submit }) {
 
     //for dynamic positioning of timesheet dropdown
     const [cursorPosition, setCursorPosition] = useState({x:0, y:0});
@@ -39,8 +39,8 @@ function TimeSheet({ dateSelected, resetAppointment, apptTimes, timeSelected }) 
                 <div className={ classes.timeSlots } >
                     { apptTimes }
                 </div>
-                <div className={classes.options}>
-                    <button className={ classes.submitActive }>Submit</button>
+                <div className={classes.options} onClick={submit}>
+                    <button className={ (timeSelected ? classes.submitActive : classes.submitInactive)}>Submit</button>
                 </div>
             </div>
         </>
@@ -50,6 +50,7 @@ function TimeSheet({ dateSelected, resetAppointment, apptTimes, timeSelected }) 
 TimeSheet.propTypes = {
     dateSelected: PropTypes.bool,
     resetAppointment: PropTypes.func,
+    submit: PropTypes.func,
     apptTimes: PropTypes.array,
     timeSelected: PropTypes.bool
 }

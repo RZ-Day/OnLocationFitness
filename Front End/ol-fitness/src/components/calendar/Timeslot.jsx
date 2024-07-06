@@ -23,11 +23,22 @@ function Timeslot({hour, minute, setTime}) {
         return hour + ":" + minute + " " + signifier;
     }
 
-    
 
+    //toggles the last time slot off when new one is selected
+    useEffect(() => {
+        return (() => {
+            if(isPressed) {
+                setIsPressed(false);
+            }
+        });
+    }, [setTime, isPressed]);
+
+    //toggles button styling & sets time of current appointment
     function clickHandler() {
-        setTime(hour, minute);
-        setIsPressed(true);
+        if(!isPressed) {
+            setTime(hour, minute);
+            setIsPressed(true);
+        }
     }
 
     return (
