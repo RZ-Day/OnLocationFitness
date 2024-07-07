@@ -14,9 +14,12 @@ public class UserService {
     private final JdbcUserDao userDao;
     private final JdbcInquiryDao inquiryDao;
 
-    public UserService(JdbcUserDao userDao, JdbcInquiryDao inquiryDao) {
+    private final EmailService emailService;
+
+    public UserService(JdbcUserDao userDao, JdbcInquiryDao inquiryDao, EmailService emailService) {
         this.userDao = userDao;
         this.inquiryDao = inquiryDao;
+        this.emailService = emailService;
     }
 
 
@@ -48,6 +51,11 @@ public class UserService {
 
             user = userDao.createUser(newUser);
         }
+
+        //send email notification directly to owner (configured in application.properties)
+        emailService.sendEmail("ryan0699@gmail.com",
+                                "New Inquiry from " + " " + userInquiry.getEmail(),
+                                        userInquiry.getMessage());
 
         //insert userId into inquiry, and add inquiry to database
         userInquiry.setUserId(user.getUserId());
